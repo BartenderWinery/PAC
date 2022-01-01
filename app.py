@@ -1,4 +1,5 @@
-import json, os
+print("Github indepentance version: Development; https://github.com/BartenderWinery/PAC; Non-copyright/license")
+import os, logic
 from time import sleep
 processing = False
 def check(r,msg): #Checks if json files exists

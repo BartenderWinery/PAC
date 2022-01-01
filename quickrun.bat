@@ -1,2 +1,2 @@
 @echo off & call cls
-start py chat.py
+start py app.py
