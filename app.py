@@ -43,9 +43,9 @@ def load(): #main loading function
                 if(message):
                     print(message.split(" "))
                     for responses in library:
-                        print(responses)
-                        for paths in library.get(responses):
-                            print(paths)
+                        #print(responses)
+                        if message == responses:
+                            print(library.get(responses))
             listen()
     else:
         print(check("library","No library found; generating basic library..."))
