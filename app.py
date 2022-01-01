@@ -35,9 +35,6 @@ def load(): #main loading function
     if(os.path.exists("library.json")&os.path.exists("tone.json")):
         with open(path+"\library.json") as library:
             library = json.load(library)
-        def subrcon(): #Look for most matched object
-            print(library)
-            print(path)
         def rcon(): #cosine_similarity process
             pass
         while not processing: #Listens for messsages in input & reloads input for repeated use
@@ -45,7 +42,10 @@ def load(): #main loading function
                 message = input(">>:")
                 if(message):
                     print(message.split(" "))
-                    subrcon()
+                    for responses in library:
+                        print(responses)
+                        for paths in library.get(responses):
+                            print(paths)
             listen()
     else:
         print(check("library","No library found; generating basic library..."))

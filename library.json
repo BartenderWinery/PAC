@@ -1,6 +1,9 @@
 {
-    "path":{
-        "I'm good":["how are you","whats up","are you good"],
-        "Hello":["hi","hello"]
-    }
+    "how are you":"I'm good",
+    "whats up":"I'm good",
+    "are you good":"I'm alright",
+
+    "hi":"hi :>",
+    "hello":"hey",
+    "yo":"whats up"
 }
