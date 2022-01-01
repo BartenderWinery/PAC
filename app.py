@@ -1,6 +1,8 @@
 print("Github indepentance version: Development; https://github.com/BartenderWinery/PAC; Non-copyright/license")
-import os, logic
+import os, json
 from time import sleep
+from sklearn.metrics.pairwise import cosine_similarity
+path = os.path.dirname(os.path.abspath(__file__))
 processing = False
 def check(r,msg): #Checks if json files exists
     match r:
@@ -18,11 +20,11 @@ def gen(package): #Main checker
     match package:
         case "librarys":
             sleep(0.5)
-            print(check("library","Creating library at: "+os.path.dirname(os.path.abspath(__file__))))
-            print(check("tone","Creating tone librarys at: "+os.path.dirname(os.path.abspath(__file__))))
-            with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "library.json"), 'w') as fp:
+            print(check("library","Creating library at: "+path))
+            print(check("tone","Creating tone librarys at: "+path))
+            with open(os.path.join(path, "library.json"), 'w') as fp:
                 pass
-            with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "tone.json"), 'w') as fp:
+            with open(os.path.join(path, "tone.json"), 'w') as fp:
                 pass
             sleep(0.5)
             if(os.path.exists("library.json")):
@@ -31,11 +33,19 @@ def gen(package): #Main checker
                 return "Tone librarys successfully created."
 def load(): #main loading function
     if(os.path.exists("library.json")&os.path.exists("tone.json")):
+        with open(path+"\library.json") as library:
+            library = json.load(library)
+        def subrcon(): #Look for most matched object
+            print(library)
+            print(path)
+        def rcon(): #cosine_similarity process
+            pass
         while not processing: #Listens for messsages in input & reloads input for repeated use
             def listen():
                 message = input(">>:")
                 if(message):
                     print(message.split(" "))
+                    subrcon()
             listen()
     else:
         print(check("library","No library found; generating basic library..."))
