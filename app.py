@@ -1,4 +1,5 @@
 print("Github indepentance version: Development; https://github.com/BartenderWinery/PAC; Non-copyright/license")
+print("This bot is still in its early stages! Please don't use any symbols or complex quuestions yet!")
 import os, json
 from time import sleep
 from sklearn.metrics.pairwise import cosine_similarity
@@ -35,7 +36,7 @@ def load(): #main loading function
     if(os.path.exists("library.json")&os.path.exists("tone.json")):
         with open(path+"\library.json") as library:
             library = json.load(library)
-        def rcon(): #cosine_similarity process
+        def rcon(massage,responses): #cosine_similarity process; future: loop though each word for similarity total score
             pass
         while not processing: #Listens for messsages in input & reloads input for repeated use
             def listen():
@@ -44,7 +45,7 @@ def load(): #main loading function
                     print(message.split(" "))
                     for responses in library:
                         #print(responses)
-                        if message == responses:
+                        if message.lower() == responses:
                             print(library.get(responses))
             listen()
     else:
