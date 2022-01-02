@@ -6,8 +6,8 @@ from difflib import SequenceMatcher
 path = os.path.dirname(os.path.abspath(__file__))
 current_time = time.strftime("%H:%M:%S", time.localtime())
 processing = False
-def check(r,msg): #Checks if json files exists
-    match r:
+def check(os,msg): #Checks if json files exists
+    match os:
         case "library":
             if not (os.path.exists("library.json")):
                 return msg
