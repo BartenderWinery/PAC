@@ -48,14 +48,13 @@ def load(): #main loading function
             def listen():
                 message = input(">>:")
                 if(message):
+                    new=0.6
                     for responses in library: #Runs though list for matchs
-                        if message.lower() == responses:
+                        Sim=SequenceMatcher(None, message, responses).ratio()
+                        if Sim > new:
+                            new=Sim
                             print(library.get(responses))
                             rcon(responses)
-                        else:
-                            if SequenceMatcher(None, message, responses).ratio()>0.6: #Looks for similar sentences
-                                print(library.get(responses)) 
-                        
             listen()
     else:
         print(check("library","No library found; generating basic library..."))
