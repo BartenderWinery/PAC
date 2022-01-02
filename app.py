@@ -37,18 +37,20 @@ def load(): #main loading function
     if(os.path.exists("library.json")&os.path.exists("tone.json")):
         with open(path+"\library.json") as library:
             library = json.load(library)
-        def rcon(responses): #Check for commands
-            if library.get(responses).count(":")>1:
-                match library.get(responses):
-                    case "I can respond to the following messages:":
-                        print(library)
-                    case "It is currently:":
-                        print(str(current_time))
         while not processing: #Listens for messsages in input & reloads input for repeated use
             def listen():
+                def rcon(responses): #Check for commands
+                    if ':' in library.get(responses):
+                        match library.get(responses):
+                            case "I can respond to the following messages:":
+                                print(library)
+                            case "It is currently:":
+                                print(str(current_time))
+                            case "Clearing the screen:":
+                                os.system("call cls")
                 message = input(">>:")
                 if(message):
-                    new=0.6
+                    new=0.8
                     for responses in library: #Runs though list for matchs
                         Sim=SequenceMatcher(None, message, responses).ratio()
                         if Sim > new:

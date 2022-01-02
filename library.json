@@ -20,7 +20,7 @@
     "who are you":"I'm python based AI chatbot",
     "who made you":"Bartender #0531",
     "how old are you":"I'm a robot, I clearly don't have a age.",
-    "what gender are you":":face_with_raised_eyebrow:",
+    "what gender are you":"what.",
     "what can you do":"I can respond to only very basic messages for now, but in the future I can hopefully detect and learn new messages to dyanmic respond to more messages beyond my library limits.",
     "i dont care":"Neither do I :>",
     "boring":"So are you",
@@ -33,7 +33,9 @@
 
     "what can you respond to":"I can respond to the following messages:",
     "what time is it":"It is currently:",
+    "clear the screen":"Clearing the screen:",
 
     "youre stupid":"yeah :(",
-    "sus":"SUUUUS MONG US AMONG US IN REAL IFE SUSUSUS"
+    "sus":"SUUUUS MONG US AMONG US IN REAL IFE SUSUSUS",
+    "sussy":"SUSSY BAKA SAY YOU ARE MY BAKAAAA"
 }
