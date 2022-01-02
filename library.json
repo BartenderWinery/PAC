@@ -1,11 +1,39 @@
 {
     "how are you":"I'm good",
+    "how are you doing":"I'm doing good",
     "whats up":"I'm good",
     "are you good":"I'm alright",
+    "whats good":"Nothing much",
+    "are you okay":"Yeah, i'm fine",
 
     "hi":"hi :>",
     "hello":"hey",
     "yo":"whats up",
+    "hey":"hello",
+    "this is cool":"Thanks!",
 
-    "how can i use this bot":"just type lol"
+    "can i add you to my server":"You can, however, you would need permission from Bartender #0531",
+
+    "is the database dyanmic":"No, but hopefully in the future",
+    "are you dyanmic":"No, but hopefully in the future",
+
+    "who are you":"I'm python based AI chatbot",
+    "who made you":"Bartender #0531",
+    "how old are you":"I'm a robot, I clearly don't have a age.",
+    "what gender are you":":face_with_raised_eyebrow:",
+    "what can you do":"I can respond to only very basic messages for now, but in the future I can hopefully detect and learn new messages to dyanmic respond to more messages beyond my library limits.",
+    "i dont care":"Neither do I :>",
+    "boring":"So are you",
+    "this is boring":"Sorry about that, I'm not as fancy as OpenAI or other projects. I'm simply an library, hopefully I become smarter than reddit one day...",
+    "stop":"There's no way for me to block responding or to detect if you are talking to me or not as of now. Please understand.",
+    "thats mean":"Sorry, I was programmed this way, hopefully I get tones for personality fitted for your experience soon.",
+
+    "sorry":"Its fine, I don't have any emotions yet.",
+    "not you":"Oh, sorry",
+
+    "what can you respond to":"I can respond to the following messages:",
+    "what time is it":"It is currently:",
+
+    "youre stupid":"yeah :(",
+    "sus":"SUUUUS MONG US AMONG US IN REAL IFE SUSUSUS"
 }

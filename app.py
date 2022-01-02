@@ -1,9 +1,10 @@
 print("Github indepentance version: Development; https://github.com/BartenderWinery/PAC; Non-copyright/license")
 print("This bot is still in its early stages! Please don't use any symbols or complex quuestions yet!")
-import os, json
+import os, json, time
 from time import sleep
-from sklearn.metrics.pairwise import cosine_similarity
+from difflib import SequenceMatcher
 path = os.path.dirname(os.path.abspath(__file__))
+current_time = time.strftime("%H:%M:%S", time.localtime())
 processing = False
 def check(r,msg): #Checks if json files exists
     match r:
@@ -36,17 +37,25 @@ def load(): #main loading function
     if(os.path.exists("library.json")&os.path.exists("tone.json")):
         with open(path+"\library.json") as library:
             library = json.load(library)
-        def rcon(massage,responses): #cosine_similarity process; future: loop though each word for similarity total score
-            pass
+        def rcon(responses): #Check for commands
+            if library.get(responses).count(":")>1:
+                match library.get(responses):
+                    case "I can respond to the following messages:":
+                        print(library)
+                    case "It is currently:":
+                        print(str(current_time))
         while not processing: #Listens for messsages in input & reloads input for repeated use
             def listen():
                 message = input(">>:")
                 if(message):
-                    print(message.split(" "))
-                    for responses in library:
-                        #print(responses)
+                    for responses in library: #Runs though list for matchs
                         if message.lower() == responses:
                             print(library.get(responses))
+                            rcon(responses)
+                        else:
+                            if SequenceMatcher(None, message, responses).ratio()>0.6: #Looks for similar sentences
+                                print(library.get(responses)) 
+                        
             listen()
     else:
         print(check("library","No library found; generating basic library..."))
