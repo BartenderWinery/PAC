@@ -1,38 +1,9 @@
-print("Github indepentance version: Development; https://github.com/BartenderWinery/PAC; Non-copyright/license")
-print("This bot is still in its early stages! Please don't use any symbols or complex quuestions yet!")
-import os, json, time
-from time import sleep
+print("Github indepentance version: AS-Iv1; https://github.com/BartenderWinery/PAC; Non-copyright/license")
+import os, json, time, library as lib
 from difflib import SequenceMatcher
 path = os.path.dirname(os.path.abspath(__file__))
 current_time = time.strftime("%H:%M:%S", time.localtime())
 processing = False
-def check(os,msg): #Checks if json files exists
-    match os:
-        case "library":
-            if not (os.path.exists("library.json")):
-                return msg
-            else:
-                return "Library.json found; passing"
-        case "tone":
-            if not (os.path.exists("tone.json")):
-                return msg
-            else:
-                return "tone.json found; passing"
-def gen(package): #Main checker
-    match package:
-        case "librarys":
-            sleep(0.5)
-            print(check("library","Creating library at: "+path))
-            print(check("tone","Creating tone librarys at: "+path))
-            with open(os.path.join(path, "library.json"), 'w') as fp:
-                pass
-            with open(os.path.join(path, "tone.json"), 'w') as fp:
-                pass
-            sleep(0.5)
-            if(os.path.exists("library.json")):
-                return "Basic library successfully created."
-            if(os.path.exists("tone.json")):
-                return "Tone librarys successfully created."
 def load(): #main loading function
     if(os.path.exists("library.json")&os.path.exists("tone.json")):
         with open(path+"\library.json") as library:
@@ -59,10 +30,9 @@ def load(): #main loading function
                             rcon(responses)
             listen()
     else:
-        print(check("library","No library found; generating basic library..."))
-        print(check("tone","No tone librarys found; generating tone librarys..."))
-        print(gen("librarys"))
-        sleep(1)
+        print(lib.check("library"))
+        print(lib.check("memory"))
+        print(lib.gen("librarys"))
         load()
 if __name__ == "__main__":
     load()
