@@ -1,0 +1,7 @@
+app - Main control, input/visuals.
+
+library - houses generation and word librarys
+
+syntactic - Builds and memorizes; detects if sentences are followups or independant
+
+rcon - checks if sentences are grammerly correct; questions or answers

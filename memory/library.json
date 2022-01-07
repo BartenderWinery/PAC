@@ -1,14 +1,20 @@
 {
-    "longterm":{
+    "memory":{
+        "name":"ex",
         "version":"AS-1v1",
         "origin":"https://github.com/BartenderWinery/PAC",
         "father's discord username":"Bartender",
         "father's discord tag":"#0531"
     },
-    "responses":{ 
-        "hi":["Hi;Hello;Hey","..."]
-    },
-    "commands":{
-        "clear the screen":["Alright","call cls"]
+    "phrases":{
+        "responses":{
+
+        },
+        "traces":{
+            
+        },
+        "commands":{
+
+        }
     }
 }
