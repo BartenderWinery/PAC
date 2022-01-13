@@ -14,21 +14,3 @@ def gen(package): #Main checker
             os.system("echo > library.json")
             if os.path.exists("library.json"):
                 return "Basic library successfully created."
-                #def rcon(responses): #Check for commands
-                #if ':' in library.get(responses):
-                #    match library.get(responses):
-                #        case "I can respond to the following messages:":
-                #            print(library)
-                #        case "It is currently:":
-                #            print(str(current_time))
-                #        case "Clearing the screen:":
-                #            os.system("call cls")
-
-                #if(message):
-                #    new=0.8
-                #    for responses in library: #Runs though list for matchs
-                #        Sim=SequenceMatcher(None, message, responses).ratio()
-                #        if Sim > new:
-                #            new=Sim
-                #            print(library.get(responses))
-                #            rcon(responses)

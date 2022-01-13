@@ -1,5 +1,5 @@
 import os, json, time, memory.library as lib, difflib
-path = os.path.dirname(os.path.abspath(__file__)); current_time = time.strftime("%H:%M:%S", time.localtime()); library = json.load(open(path+"\memory\library.json"))
+path = os.path.dirname(os.path.abspath(__file__)); current_time = time.strftime("%H:%M:%S", time.localtime()); library = json.load(open(path+"\memory\library.json")); mods=[]
 def load():
     def rcon(pack):
         match pack[1]:
