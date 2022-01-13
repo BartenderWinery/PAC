@@ -8,12 +8,19 @@
     },
     "phrases":{
         "responses":{
-
+            "how are you":"I'm good;txt",
+            "clear the screen":"Done;cmd;call cls",
+            "test new command system":"Test complete;cmd;test",
+            "whats the time":"It's {};format;time",
+            "where did you come from":"From {};format;origin"
         },
         "traces":{
             
         },
         "commands":{
+
+        },
+        "async":{
 
         }
     }
