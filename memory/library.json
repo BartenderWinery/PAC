@@ -18,7 +18,9 @@
             
         },
         "commands":{
-
+            "run":"run;Done",
+            "cls":"cls;Done",
+            "exit":"exit"
         },
         "async":{
 

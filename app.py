@@ -38,6 +38,18 @@ def load():
                             if package[1] > con:
                                 con=package[1]
                                 print(rcon(package[0]))
+                        for cmd in library["phrases"]["commands"]:
+                            package=[message.split(";"),library["phrases"]["commands"].get(cmd).split(";")]
+                            if package[0][0] == package[1][0]:
+                                match package[0][0]:
+                                    case "run":
+                                        os.system(package[0][1])
+                                        print(package[1][1])
+                                    case "cls":
+                                        os.system("call cls")
+                                        print(package[1][1])
+                                    case "exit":
+                                       os.system("call taskkill /f /pid "+str(os.getpid()))
                     #except:
                     #    print("Error; 001; Initial code error!")
             listen()
