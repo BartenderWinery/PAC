@@ -18,3 +18,6 @@ Multi Windowed command promopt to show information seperate from the native wind
 ******
 ### AV-I: Verbal speaking bot based off of AS-Iv2
  - Not yet underway; Wait for AS-Iv2 to be completed.
+******
+Known apps using PAC:
+ - Ex-soul; Automated response/Moderation discord bot based on Python. https://github.com/BartenderWinery/Ex-soul
