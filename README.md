@@ -14,7 +14,7 @@ Multi Windowed command promopt to show information seperate from the native wind
 ![Demo](https://aeroweb.netlify.app/packages/box/demo.gif)
 ******
 AS-Iv2: A verbal based bot; Understands the english language - Giving you real answers from its memory.
-### Not yet underway; Wait for AS-Iv1 to be completed.
+ - Not yet underway; Wait for AS-Iv1 to be completed.
 ******
 AV-I: Verbal speaking bot based off of AS-Iv2
-### Not yet underway; Wait for AS-Iv2 to be completed.
+ - Not yet underway; Wait for AS-Iv2 to be completed.
