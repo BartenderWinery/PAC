@@ -31,27 +31,41 @@ def load():
             def listen():
                 message = input(">>:")
                 if(message):
-                    #try:
+                    i=[True,True]
+                    try:
                         con=0.8
                         for responses in library["phrases"]["responses"]:
-                            package=[library["phrases"]["responses"].get(responses).split(";"),difflib.SequenceMatcher(None, message, responses).ratio()]
-                            if package[1] > con:
-                                con=package[1]
-                                print(rcon(package[0]))
+                            try:
+                                package=[library["phrases"]["responses"].get(responses).split(";"),difflib.SequenceMatcher(None, message, responses).ratio()]
+                                if package[1] > con:
+                                    con=package[1]
+                                    print(rcon(package[0]))
+                                    break
+                            except:
+                                print("ERR; 002 - Please check if you added the correct arguments to ASI librarys.")
+                        else:
+                            i[0]=False
                         for cmd in library["phrases"]["commands"]:
-                            package=[message.split(";"),library["phrases"]["commands"].get(cmd).split(";")]
-                            if package[0][0] == package[1][0]:
-                                match package[0][0]:
-                                    case "run":
-                                        os.system(package[0][1])
-                                        print(package[1][1])
-                                    case "cls":
-                                        os.system("call cls")
-                                        print(package[1][1])
-                                    case "exit":
-                                       os.system("call taskkill /f /pid "+str(os.getpid()))
-                    #except:
-                    #    print("Error; 001; Initial code error!")
+                            try:
+                                package=[message.split(";"),library["phrases"]["commands"].get(cmd).split(";")]
+                                if package[0][0] == package[1][0]:
+                                    match package[0][0]:
+                                        case "run":
+                                            os.system(package[0][1])
+                                            print(package[1][1])
+                                        case "cls":
+                                            os.system("call cls")
+                                            print(package[1][1])
+                                        case "exit":
+                                           os.system("call taskkill /f /pid "+str(os.getpid()))
+                            except:
+                                print("ERR; 003 - Please check if you added the correct arguments to CMD librarys.")
+                        else:
+                            i[1]=False
+                        if not i[0] and i[1]:
+                            print("...?")
+                    except:
+                        print("Error; 001; Internal code error!")
             listen()
     else:
         print(lib.check("library"))
