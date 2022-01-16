@@ -55,20 +55,24 @@ def load():
                                     match package[0][0]:
                                         case "run":
                                             os.system(package[0][1])
+                                            os.system("echo:")
                                             print(package[1][1])
+                                            break
                                         case "cls":
                                             os.system("call cls")
                                             print(package[1][1])
+                                            break
                                         case "console":
                                             print(package[1][1])
                                             os.system("call console.bat")
+                                            break
                                         case "exit":
                                            os.system("call taskkill /f /pid "+str(os.getpid()))
                             except:
                                 print("ERR; 003 - CMD librarys error/Keyboard interruption.")
                         else:
                             i[1]=False
-                        if i==[False,False]:
+                        if i[0]==False and i[1]==False:
                             print("...?")
                     except:
                         print("Error; 001; Internal code error!")
