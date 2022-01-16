@@ -10,6 +10,9 @@ def load():
                     case "test":
                         os.system("echo:")
                         os.system("echo Test passed!")
+                    case "console":
+                        print(pack[0])
+                        os.system(pack[2])
                     case _:
                         os.system(pack[2])
                 return pack[0]
@@ -56,20 +59,27 @@ def load():
                                         case "cls":
                                             os.system("call cls")
                                             print(package[1][1])
+                                        case "console":
+                                            print(package[1][1])
+                                            os.system("call console.bat")
                                         case "exit":
                                            os.system("call taskkill /f /pid "+str(os.getpid()))
                             except:
-                                print("ERR; 003 - Please check if you added the correct arguments to CMD librarys.")
+                                print("ERR; 003 - CMD librarys error/Keyboard interruption.")
                         else:
                             i[1]=False
                         if not i[0] and i[1]:
                             print("...?")
                     except:
                         print("Error; 001; Internal code error!")
+                
             listen()
     else:
         print(lib.check("library"))
         print(lib.gen("librarys"))
         load()
 if __name__ == "__main__":
-    load()
+    try:
+        load()
+    except KeyboardInterrupt:
+        print(" Keyboard interruption")

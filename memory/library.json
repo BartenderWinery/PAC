@@ -22,7 +22,7 @@
             "hey":"?;txt;none",
             "this is cool":"Thanks!;txt;none",
             "thanks":"Welcome!;txt;none",
-        
+            
             "is the database dyanmic":"No, but hopefully in the future;txt;none",
             "are you dyanmic":"No, but hopefully in the future;txt;none",
 
@@ -43,6 +43,7 @@
             "clear the screen":"Done;cmd;call cls",
             "whats the time":"It's {};format;time",
             "where did you come from":"From {};format;origin",
+            "open console":"Alright;cmd;console",
 
             "youre stupid":"yeah :(;txt;none",
 
@@ -54,6 +55,7 @@
         "commands":{
             "run":"run;Done",
             "cls":"cls;Done",
+            "console":"console;Done",
             "exit":"exit"
         },
         "async":{
