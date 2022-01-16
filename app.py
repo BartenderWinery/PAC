@@ -68,7 +68,7 @@ def load():
                                 print("ERR; 003 - CMD librarys error/Keyboard interruption.")
                         else:
                             i[1]=False
-                        if not i[0] and i[1]:
+                        if i==[False,False]:
                             print("...?")
                     except:
                         print("Error; 001; Internal code error!")
