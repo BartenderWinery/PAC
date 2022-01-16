@@ -7,6 +7,7 @@
  - Commands; The bot can access commands - It can run any code locally!
  Features coming soon:
  ```
+Traces isolation for multiple traces of same ID
 Easy customization for personalized experiences
 Debug UI
 Multi Windowed command promopt to show information seperate from the native window
