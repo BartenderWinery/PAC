@@ -51,8 +51,8 @@
             "run":"run;Done",
             "cls":"cls;Done",
             "console":"console;Done",
-            "reboot":"reboot",
-            "exit":"exit"
+            "reboot":"reboot; ",
+            "exit":"exit; "
         },
         "async":{
 

@@ -40,26 +40,26 @@ def load():
                 else:
                     message = input(">>:")
                 if(message):
-                        i=[True,True]
-                    #try:
+                    i=[True,True]
+                    try:
                         con=0.8
                         for responses in library["phrases"][server]:
-                            #try:
+                            try:
                                 package=[library["phrases"][server].get(responses).split(";"),difflib.SequenceMatcher(None, message, responses).ratio()]
                                 if package[1] > con:
                                     con=package[1]
                                     rcon(package[0])
                                     break
-                            #except:
-                            #    print("ERR; 002 - Please check if you added the correct arguments to ASI librarys.")
+                            except:
+                                print("ERR; 002 - Please check if you added the correct arguments to ASI librarys.")
                         else:
                             i[0]=False
                         for cmd in library["phrases"]["commands"]:
-                            #try:
+                            try:
                                 package=[message.split(";"),library["phrases"]["commands"].get(cmd).split(";")]
                                 if package[0][0] == package[1][0]:
                                     match package[0][0]:
-                                        case "run":
+                                        case "run": #Remove ; feature and instead use all but first string word in future
                                             os.system(package[0][1])
                                             os.system("echo:")
                                             print(package[1][1])
@@ -74,11 +74,10 @@ def load():
                                             break
                                         case "reboot":
                                             os.system("py "+path+"\\app.py")
-                                            break
                                         case "exit":
-                                           os.system("call taskkill /f /pid "+str(os.getpid()))
-                            #except:
-                            #    print("ERR; 003 - CMD librarys error/Keyboard interruption.")
+                                            os.system("taskkill /f /im python.exe")
+                            except:
+                                print("ERR; 003 - CMD librarys error/Keyboard interruption.")
                         else:
                             i[1]=False
                         if i[0]==False and i[1]==False:
@@ -87,8 +86,8 @@ def load():
                                     print("...?")
                                 case "traces":
                                     listen(None,"responses","none")
-                    #except:
-                    #    print("Error; 001; Internal code error!")
+                    except:
+                        print("Error; 001; Internal code error!")
                 
             listen(None,"responses","none")
     else:
@@ -100,3 +99,4 @@ if __name__ == "__main__":
         load()
     except KeyboardInterrupt:
         print(" Keyboard interruption")
+        os.system("taskkill /f /im python.exe")
