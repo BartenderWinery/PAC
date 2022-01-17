@@ -51,7 +51,7 @@ def load():
                                     rcon(package[0])
                                     break
                             except:
-                                print("ERR; 002 - Please check if you added the correct arguments to ASI librarys.")
+                                print("ERR; 002 - Please check if yfou added the correct arguments to ASI librarys.")
                         else:
                             i[0]=False
                         for cmd in library["phrases"]["commands"]:
