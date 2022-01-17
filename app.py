@@ -70,7 +70,7 @@ def load():
                                             break
                                         case "console":
                                             print(package[1][1])
-                                            os.system("call console.bat")
+                                            os.system("start "+path+"\\console.bat")
                                             break
                                         case "reboot":
                                             os.system("py "+path+"\\app.py")
