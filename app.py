@@ -3,10 +3,13 @@ path = os.path.dirname(os.path.abspath(__file__)); current_time = time.strftime(
 class app:
     def preload():
         print("Github indepentance version: AS-Iv1; https://github.com/BartenderWinery/PAC; Non-copyright/license")
+        modify.pre()
     def s():
         return input(">>: ")
     def load():
+        modify.on()
         while path:
+            modify.add()
             system.process(app.s(),"responses",None)
 class system:
     def rcon(pack):
@@ -41,7 +44,8 @@ class system:
                 return str(pack[0]).format(quary)
     def process(msg,server,iso):
         if msg:
-            passed=[True,True]
+            modify.tone(msg)
+            passed=[True,True]; overwrite=False
             try:
                 con=0.8
                 for responses in library["phrases"][server]:
@@ -75,8 +79,12 @@ class system:
                                     break
                                 case "reboot":
                                     os.system("py "+path+"\\app.py")
+                                case "mods":
+                                    print(json.dumps(mods, indent=3))
                                 case "exit":
                                     os.system("taskkill /f /im python.exe")
+                            if package[1][1]=="none":
+                                overwrite=True
                     except:
                         print("ERR 004; CMD library error.")
                 else:
@@ -84,12 +92,30 @@ class system:
                 if passed==[False,False]:
                     match server:
                         case "responses":
-                            if len(msg)>1:
+                            if len(msg)>1 and overwrite==False:
                                 print("...?")
                         case "traces":
                             system.process(None,"responses","none")
             except:
                 print("ERR 002; Internal code error.")
+class modify:
+    try:
+        global mods
+        mods=json.load(open(path+"\mods\sys.json"))
+        def pre():
+            for pre in mods["preload"]:
+                os.system("py "+path+"\mods\\"+pre)
+        def on():
+            for load in mods["onload"]:
+                os.system("py "+path+"\mods\\"+load)
+        def add():
+            for addon in mods["addons"]:
+                os.system("py "+path+"\mods\\"+addon)
+        def tone(msg):
+            for tone in mods["tones"]:
+                os.system("py "+path+"\mods\\"+tone)
+    except:
+        print("ERR 005; No mods found. If you have some installed, make sure you have sys.json in the mods folder.")
 try:
     app.preload()
 except:

@@ -54,8 +54,9 @@
             "run":"run;Done",
             "cls":"cls;Done",
             "console":"console;Done",
-            "reboot":"reboot; ",
-            "exit":"exit; "
+            "reboot":"reboot;none",
+            "mods":"mods;none",
+            "exit":"exit;none"
         },
         "async":{
 
