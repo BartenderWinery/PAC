@@ -28,7 +28,8 @@ goto :exec_%cmd%
         goto input
 :exec_open
     call %~dp0\app.py
-    echo Opened
+    echo:
+    echo Done
     goto input
 :exec_cls
     call cls
