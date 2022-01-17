@@ -9,8 +9,10 @@ class app:
     def load():
         modify.on()
         while path:
-            modify.add()
-            system.process(app.s(),"responses",None)
+            if mods["addons"]:
+                modify.add()
+            else:
+                system.process(app.s(),"responses",None)
 class system:
     def rcon(pack):
         match pack[1]:
@@ -44,60 +46,62 @@ class system:
                 return str(pack[0]).format(quary)
     def process(msg,server,iso):
         if msg:
-            modify.tone(msg)
-            passed=[True,True]; overwrite=False
-            try:
-                con=0.8
-                for responses in library["phrases"][server]:
-                    try:
-                        package=[library["phrases"][server].get(responses).split(";"),difflib.SequenceMatcher(None, msg, responses).ratio()]
-                        if package[1]>con:
-                            con=package[1]
-                            system.rcon(package[0])
-                            break
-                    except:
-                        print("ERR 003; Response library error.")
-                else:
-                    passed[0]=False
-                for cmd in library["phrases"]["commands"]:
-                    try:
-                        package=[msg.split(";"),library["phrases"]["commands"].get(cmd).split(";")]
-                        if package[0][0] == package[1][0]:
-                            match package[0][0]:
-                                case "run":
-                                    os.system(package[0][1])
-                                    os.system("echo:")
-                                    print(package[1][1])
-                                    break
-                                case "cls":
-                                    os.system("call cls")
-                                    print(package[1][1])
-                                    break
-                                case "console":
-                                    print(package[1][1])
-                                    os.system("start "+path+"\\console.bat")
-                                    break
-                                case "reboot":
-                                    os.system("py "+path+"\\app.py")
-                                case "mods":
-                                    print(json.dumps(mods, indent=3))
-                                case "exit":
-                                    os.system("taskkill /f /im python.exe")
-                            if package[1][1]=="none":
-                                overwrite=True
-                    except:
-                        print("ERR 004; CMD library error.")
-                else:
-                    passed[1]=False
-                if passed==[False,False]:
-                    match server:
-                        case "responses":
-                            if len(msg)>1 and overwrite==False:
-                                print("...?")
-                        case "traces":
-                            system.process(None,"responses","none")
-            except:
-                print("ERR 002; Internal code error.")
+            if mods["addons"]:
+                modify.tone(msg)
+            else:
+                passed=[True,True]; overwrite=False
+                try:
+                    con=0.8
+                    for responses in library["phrases"][server]:
+                        try:
+                            package=[library["phrases"][server].get(responses).split(";"),difflib.SequenceMatcher(None, msg, responses).ratio()]
+                            if package[1]>con:
+                                con=package[1]
+                                system.rcon(package[0])
+                                break
+                        except:
+                            print("ERR 003; Response library error.")
+                    else:
+                        passed[0]=False
+                    for cmd in library["phrases"]["commands"]:
+                        try:
+                            package=[msg.split(";"),library["phrases"]["commands"].get(cmd).split(";")]
+                            if package[0][0] == package[1][0]:
+                                match package[0][0]:
+                                    case "run":
+                                        os.system(package[0][1])
+                                        os.system("echo:")
+                                        print(package[1][1])
+                                        break
+                                    case "cls":
+                                        os.system("call cls")
+                                        print(package[1][1])
+                                        break
+                                    case "console":
+                                        print(package[1][1])
+                                        os.system("start "+path+"\\console.bat")
+                                        break
+                                    case "reboot":
+                                        os.system("py "+path+"\\app.py")
+                                    case "mods":
+                                        print(json.dumps(mods, indent=3))
+                                    case "exit":
+                                        os.system("taskkill /f /im python.exe")
+                                if package[1][1]=="none":
+                                    overwrite=True
+                        except:
+                            print("ERR 004; CMD library error.")
+                    else:
+                        passed[1]=False
+                    if passed==[False,False]:
+                        match server:
+                            case "responses":
+                                if len(msg)>1 and overwrite==False:
+                                    print("...?")
+                            case "traces":
+                                system.process(None,"responses","none")
+                except:
+                    print("ERR 002; Internal code error.")
 class modify:
     try:
         global mods

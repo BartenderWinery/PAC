@@ -5,6 +5,7 @@
  - Library formating; Dyanmic format responses with realtime data.
  - Traces; Memory from a previous match.
  - Commands; The bot can access commands - It can run any code locally!
+ - Mods; Automatically load mods to create personal menus or external tools such as using googlesearch modules.
  Features coming soon:
  ```
 Traces isolation for multiple traces of same ID
