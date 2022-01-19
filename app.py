@@ -20,6 +20,7 @@ class system:
         match pack[1]:
             case "txt":
                 if not pack[2]=="none":
+                    print(pack[0])
                     trace = input(">>:")
                     if trace:
                         system.process(trace,"traces",pack[2])

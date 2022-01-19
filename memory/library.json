@@ -50,6 +50,9 @@
             "what time is it":"It is currently: {};format;time",
             "what do you think of":"Unfortunately, I can't respond to such complex questions. Please wait until the release of AS-1v2 when I can understand english itself.;txt;none"
         },
+        "traces":{
+                "idk":"uh huh...;txt;gender"
+        },
         "commands":{
             "run":"run;Done",
             "cls":"cls;Done",
