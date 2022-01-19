@@ -27,7 +27,8 @@ goto :exec_%cmd%
         echo Github cleanup complete.
         goto input
 :exec_open
-    call %~dp0\app.py
+    echo Visual studio is required for this command to run.
+    call code %~dp0
     echo:
     echo Done
     goto input

@@ -1,10 +1,12 @@
 import os, json, time, memory.library as lib, difflib
-path = os.path.dirname(os.path.abspath(__file__)); current_time = time.strftime("%H:%M:%S", time.localtime()); library = json.load(open(path+"\memory\library.json"))
+path = os.path.dirname(os.path.abspath(__file__)); current_time = time.strftime("%H:%M:%S", time.localtime()); library = json.load(open(path+"\memory\library.json")); repo=[]
 class app:
     def preload():
         print("Github indepentance version: AS-Iv1; https://github.com/BartenderWinery/PAC; Non-copyright/license")
         modify.pre()
     def s():
+        #responses.append(input(">>: "))
+        #responses[-1]
         return input(">>: ")
     def load():
         modify.on()
@@ -18,12 +20,11 @@ class system:
         match pack[1]:
             case "txt":
                 if not pack[2]=="none":
-                    print(pack[0])
                     trace = input(">>:")
                     if trace:
                         system.process(trace,"traces",pack[2])
                 else:
-                    print(pack[0]) #Trace isolation not yet supported
+                    return pack[0]
             case "cmd":
                 match pack[2]: 
                     case "console":
@@ -36,6 +37,8 @@ class system:
                 match pack[2]:
                     case "time":
                         quary=current_time
+                    case "last":
+                        quary=repo[-2]
                     case _:
                         con=0.8
                         for mem in library["memory"]:
@@ -57,7 +60,8 @@ class system:
                             package=[library["phrases"][server].get(responses).split(";"),difflib.SequenceMatcher(None, msg, responses).ratio()]
                             if package[1]>con:
                                 con=package[1]
-                                system.rcon(package[0])
+                                repo.append(library["phrases"][server].get(responses).split(";")[0])
+                                print(system.rcon(package[0]))
                                 break
                         except:
                             print("ERR 003; Response library error.")
@@ -99,7 +103,7 @@ class system:
                                 if len(msg)>1 and overwrite==False:
                                     print("...?")
                             case "traces":
-                                system.process(None,"responses","none")
+                                system.process(package[0],"responses","none")
                 except:
                     print("ERR 002; Internal code error.")
 class modify:

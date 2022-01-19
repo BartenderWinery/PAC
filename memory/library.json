@@ -42,13 +42,13 @@
             "where did you come from":"From {};format;origin",
             "open console":"Alright;cmd;console",
             "youre stupid":"yeah :(;txt;none",
+            "thank you":"You're welcome.;txt;none",
             "cool":" ;txt;none",
             "look up":"I dont have that kind of access yet.;txt;none",
             "oo":"?;txt;none",
+            "repeat that":"{};format;last",
+            "what time is it":"It is currently: {};format;time",
             "what do you think of":"Unfortunately, I can't respond to such complex questions. Please wait until the release of AS-1v2 when I can understand english itself.;txt;none"
-        },
-        "traces":{
-                "idk":"uh huh...;txt;none;gender"
         },
         "commands":{
             "run":"run;Done",
