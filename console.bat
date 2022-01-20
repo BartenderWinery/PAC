@@ -15,7 +15,7 @@ goto :exec_%cmd%
 :exec_clean
     echo What would you like to cleanup?
     echo:
-    echo [py, github]
+    echo [py, github, vs]
     set /p con=":: " 
     call :subexec_%con%
     :subexec_py
@@ -23,8 +23,12 @@ goto :exec_%cmd%
         echo Python cleanup complete.
         goto input
     :subexec_github
-        call del README.md && call del /q .gitignore && call del /q .gitattributes && call RMDIR /s /q .git
+        call del %~dp0\README.md && call del /q %~dp0\.gitignore && call del /q %~dp0\.gitattributes && call RMDIR /s /q %~dp0\.git
         echo Github cleanup complete.
+        goto input
+    :subexec_vs
+        call RMDIR /s /q %~dp0\.vs
+        echo VS cleanup complete.
         goto input
 :exec_open
     echo Visual studio is required for this command to run.
