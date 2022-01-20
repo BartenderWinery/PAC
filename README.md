@@ -5,15 +5,15 @@
  - Library formating; Dyanmic format responses with realtime data.
  - Traces; Memory from a previous match.
  - Commands; The bot can access commands - It can run any code locally!
- - Mods; Automatically load mods to create personal menus or external tools such as using googlesearch modules.
+ - Module; You can develop personalized experiences with ease with this module!
  Features coming soon:
  ```
 Traces isolation for multiple traces of same ID
-Easy customization for personalized experiences
+Trace response framework
 Debug UI
 Multi Windowed command promopt to show information seperate from the native window
 ```
-![Demo](https://aeroweb.netlify.app/packages/box/demo.gif)
+![Demo](https://aeroweb.netlify.app/packages/box/demo.gif) Out of date.
 ******
 ### AS-Iv2: An actual artificial intelligence based AI; Understands the english language - Giving you real answers from its memory with no pre-made librarys.
  - Not yet underway; Wait for AS-Iv1 to be completed.
