@@ -13,6 +13,7 @@ Traces isolation for multiple traces of same ID
 Trace response framework
 Debug UI
 Multi Windowed command promopt to show information seperate from the native window
+NumPY
 ```
 
 Installing via PyPi:
