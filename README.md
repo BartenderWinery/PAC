@@ -14,6 +14,13 @@ Trace response framework
 Debug UI
 Multi Windowed command promopt to show information seperate from the native window
 ```
+
+Installing via PyPi:
+ - Website: https://pypi.org/project/AS-Iv1/
+ - Pip: pip install AS-Iv1
+
+Had to change the name temporarily for PyPi.
+
 ![Demo](https://aeroweb.netlify.app/packages/box/demo.gif) Out of date.
 ******
 ### AS-Iv2: An actual artificial intelligence based AI; Understands the english language - Giving you real answers from its memory with no pre-made librarys.
