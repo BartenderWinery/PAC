@@ -6,6 +6,7 @@
  - Traces; Memory from a previous match.
  - Commands; The bot can access commands - It can run any code locally!
  - Module; You can develop personalized experiences with ease with this module!
+ 
  Features coming soon:
  ```
 Traces isolation for multiple traces of same ID
