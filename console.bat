@@ -1,8 +1,13 @@
 @echo off
-echo Console; [start/run, build, clean, open, cls, reboot, exit/close]
+echo Console; [embed, start/run, build, clean, open, cls, reboot, exit/close]
 :input
     set /p cmd=">>: "
-goto :exec_%cmd%
+    goto :exec_%cmd%
+:exec_embed
+    echo ==--------------------------==Embedded script==-----------------------==
+    call py %~dp0\app.py
+    echo ==--==End script==----------------------------------------------------==
+    goto input
 :exec_start
     start py %~dp0\app.py
     exit

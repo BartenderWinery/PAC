@@ -25,7 +25,7 @@ Had to change the name temporarily for PyPi.
 ![Demo](https://aeroweb.netlify.app/packages/box/demo.gif)
 ******
 ### AS-Iv2: An actual artificial intelligence based AI; Understands the english language - Giving you real answers from its memory with no pre-made librarys.
- - Not yet underway; Wait for AS-Iv1 to be completed.
+ - Currently underway.
 ******
 ### AV-I: Verbal speaking bot based off of AS-Iv2
  - Not yet underway; Wait for AS-Iv2 to be completed.
